@@ -1,1 +1,1 @@
-# Practive with local storage 
+# Practice with local storage 
