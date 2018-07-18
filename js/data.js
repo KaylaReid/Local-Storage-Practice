@@ -101,20 +101,24 @@ const loadDatabase = function (localStorageKey) {
 
 // my function that can be passed any key i want from my object
 function writeToDom(items) {
-    
+
     // This variable is holding the spot I want to target/print to later, in my html
     let allMyStuff = document.getElementById("myStuff");
 
     // this loop runs though the things in the key I passed my function. Using [] for the items instead of items. tells it to evaluate what is in there instead of trying to find an items key.
     for (let i = 0; i < HomeInventoryDatabase[items].length; i++) {
+        // currentItem variable it holding the results of my loop.
         let currentItem = HomeInventoryDatabase[items][i];
+    
         console.log("My Stuff", items);
+        // Using my variable target to enter in my html using += so it will add to whatever is in my html 
         allMyStuff.innerHTML +=
             `<p class='items'> ${currentItem.name} ${currentItem.location} ${currentItem.description}</p>`;
 
         console.log(HomeInventoryDatabase[items][i]);
     }
 }
+// I can pass my variable any key I want
 writeToDom("crafts")
 writeToDom("furniture")
 writeToDom("electronics")
